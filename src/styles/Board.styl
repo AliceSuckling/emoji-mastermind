@@ -1,0 +1,164 @@
+.Board
+  margin: 40px 0px 0px 550px
+  &__guess
+    &__button
+      font-size: 14px
+      border: 0
+      background-color: #403f3f
+      color: white
+      margin: 15px 0px 15px 550px
+
+      // &::before
+      //   height: 5px
+      //   width: 5px
+      //   background-color: #403f3f
+      //   // background-color: transparent
+      &:hover
+        background-color: white
+        color: #403f3f
+        border: 1px solid #403f3f
+      &:active
+        animation: none
+      // animation: rocket 3s; //remain after click so full animation
+    &__row
+      animation: fadeIn 1s backwards
+      backface-visibility: hidden
+      &__column
+        border-radius: 50%
+        width: 50px
+        height: 50px
+        margin-right: 5px
+        color: transparent
+        transform: scale(1)
+        transition: transform 0.3s ease-in-out
+        backface-visibility: hidden
+        &--0
+          background-color: #f7c8f9
+        &--1
+          background-color: #6aefb7
+        &--2
+          background-color: #f5c952
+        &--3
+          background-color: #4edbdf
+        &--active
+          cursor: pointer
+          &:active
+            transform: scale(0.4)
+
+  &__clues
+    color: transparent
+    font-size: 10px
+    &__black
+      border-radius: 50%
+      background-color: black
+      margin: 10px 5px 0px 0px
+    &__red
+      border-radius: 50%
+      background-color: red
+      margin: 10px 5px 0px 0px
+
+  &__message
+    font-size: 32px
+    text-align: center
+    color: #8cb4ef
+    font-family: monoscript
+    margin: 50px 50px 0px 50px
+    padding: 5px 0px 0px 5px
+    animation: blink 1s infinite;
+    &__reset__button
+      font-size: 14px
+      border: 0
+      background-color: #403f3f
+      color: white
+      margin: 15px 0px 15px 15px
+      &:hover
+        background-color: white
+        color: #403f3f
+        border: 1px solid #403f3f
+
+@keyframes blink {
+  to { color: #399d89 }
+}
+
+
+//create a tail so it looks more like a rocket
+@keyframes rocket {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotateZ(0)
+  }
+  10% {
+    transform: translate(0px, 0px) scale(0.3) rotateZ(0)
+    color: transparent
+    border-radius: 20%
+  }
+  20% {
+    transform: translate(150px, 0px) scale(0.3) rotateZ(0)
+    color: transparent
+    border-radius: 20%
+  }
+  30% {
+    transform: translate(200px, 0px) scale(0.3) rotateZ(-90deg)
+    color: transparent
+    border-radius: 20%
+  }
+  40% {
+    transform: translate(200px, -50px) scale(0.3) rotateZ(-180deg)
+    color: transparent
+    border-radius: 20%
+  }
+  50% {
+    transform: translate(170px, -50px) scale(0.3) rotateZ(-180deg)
+    color: transparent
+    border-radius: 20%
+  }
+  60% {
+    transform: translate(100px, -50px) scale(0.3) rotateZ(-180deg)
+    color: transparent
+    border-radius: 20%
+  }
+  70% {
+    transform: translate(0px, -50px) scale(0.3) rotateZ(-180deg)
+    color: transparent
+    border-radius: 20%
+  }
+  80% {
+    transform: translate(-50px, -50px) scale(0.3) rotateZ(-180deg)
+    color: transparent
+    border-radius: 20%
+  }
+  90% {
+    transform: translate(-50px, 0px) scale(0.3) rotateZ(-270deg)
+    color: transparent
+    border-radius: 20%
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotateZ(0)
+  }
+}
+
+@keyframes change {
+  0% {
+    transform: scale(1)
+  }
+  25% {
+    transform: scale(0.5)
+  }
+  50% {
+    transform: scale(0.5)
+    opacity: 0
+  }
+  75% {
+    transform: scale(0.5)
+    opacity: 1
+  }
+  100% {
+    transform: scale(1)
+    opacity: 1
+  }
+}
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1

@@ -1,5 +1,5 @@
 .Board
-  margin: 40px 0px 0px 550px
+  margin: 40px auto
   &__guess
     &__button
       font-size: 14px
@@ -7,19 +7,12 @@
       background-color: #403f3f
       color: white
       margin: 15px 0px 15px 550px
-
-      // &::before
-      //   height: 5px
-      //   width: 5px
-      //   background-color: #403f3f
-      //   // background-color: transparent
       &:hover
         background-color: white
         color: #403f3f
         border: 1px solid #403f3f
       &:active
         animation: none
-      // animation: rocket 3s; //remain after click so full animation
     &__row
       animation: fadeIn 1s backwards
       backface-visibility: hidden
@@ -32,14 +25,21 @@
         transform: scale(1)
         transition: transform 0.3s ease-in-out
         backface-visibility: hidden
+        background-size: contain
+        background-position:  center
+        background-repeat: no-repeat
         &--0
-          background-color: #f7c8f9
+          content: ""
+          background-image: url('/src/img/nerd-face.png')
         &--1
-          background-color: #6aefb7
+          content: ""
+          background-image: url('/src/img/money-mouth-face.png')
         &--2
-          background-color: #f5c952
+          content: ""
+          background-image: url('/src/img/thinking-face.png')
         &--3
-          background-color: #4edbdf
+          content: ""
+          background-image: url('/src/img/wink-face.png')
         &--active
           cursor: pointer
           &:active
@@ -48,6 +48,7 @@
   &__clues
     color: transparent
     font-size: 10px
+    margin-top: 2px
     &__black
       border-radius: 50%
       background-color: black
@@ -78,83 +79,6 @@
 
 @keyframes blink {
   to { color: #399d89 }
-}
-
-
-//create a tail so it looks more like a rocket
-@keyframes rocket {
-  0% {
-    transform: translate(0px, 0px) scale(1) rotateZ(0)
-  }
-  10% {
-    transform: translate(0px, 0px) scale(0.3) rotateZ(0)
-    color: transparent
-    border-radius: 20%
-  }
-  20% {
-    transform: translate(150px, 0px) scale(0.3) rotateZ(0)
-    color: transparent
-    border-radius: 20%
-  }
-  30% {
-    transform: translate(200px, 0px) scale(0.3) rotateZ(-90deg)
-    color: transparent
-    border-radius: 20%
-  }
-  40% {
-    transform: translate(200px, -50px) scale(0.3) rotateZ(-180deg)
-    color: transparent
-    border-radius: 20%
-  }
-  50% {
-    transform: translate(170px, -50px) scale(0.3) rotateZ(-180deg)
-    color: transparent
-    border-radius: 20%
-  }
-  60% {
-    transform: translate(100px, -50px) scale(0.3) rotateZ(-180deg)
-    color: transparent
-    border-radius: 20%
-  }
-  70% {
-    transform: translate(0px, -50px) scale(0.3) rotateZ(-180deg)
-    color: transparent
-    border-radius: 20%
-  }
-  80% {
-    transform: translate(-50px, -50px) scale(0.3) rotateZ(-180deg)
-    color: transparent
-    border-radius: 20%
-  }
-  90% {
-    transform: translate(-50px, 0px) scale(0.3) rotateZ(-270deg)
-    color: transparent
-    border-radius: 20%
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1) rotateZ(0)
-  }
-}
-
-@keyframes change {
-  0% {
-    transform: scale(1)
-  }
-  25% {
-    transform: scale(0.5)
-  }
-  50% {
-    transform: scale(0.5)
-    opacity: 0
-  }
-  75% {
-    transform: scale(0.5)
-    opacity: 1
-  }
-  100% {
-    transform: scale(1)
-    opacity: 1
-  }
 }
 
 @keyframes fadeIn

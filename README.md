@@ -1,11 +1,7 @@
-# mastermind
+# emoji-mastermind
 
 ## Development
-To run the development server use `npm start`. This will initialize the webpack dev server on `localhost:8001`. This has been set up with [react component hot loading](https://github.com/gaearon/react-hot-loader).
-
-## Build / Production
-To build the application for production/deployment, run `npm run build`. This will bundle the application and compress all files. The `dist/` directory will be created containing the application.
-
+To run the development server use `npm start` or `yarn run start`, after `install`. This will initialize the webpack dev server on `localhost:8001`. This has been set up with [react component hot loading](https://github.com/gaearon/react-hot-loader).
 
 ## Testing
 ### Karma / Unit Testing
